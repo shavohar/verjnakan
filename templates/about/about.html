@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+<!--    <style>-->
+<!--        /* Add your custom CSS styles here */-->
+<!--        /* For example: */-->
+<!--        /* .chef img { max-width: 100%; height: auto; } */-->
+<!--    </style>-->
+</head>
+<body>
+
+    <!-- About Us Section -->
+    <section id="about-us">
+        <h2>{{ about.title }}</h2>
+        <p>{{ about.content }}</p>
+        <img src="{{ about.image.url }}" alt="{{ about.title }}">
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us">
+        <h2>{{ why_choose_us.title }}</h2>
+        <p>{{ why_choose_us.content }}</p>
+        <img src="{{ why_choose_us.image.url }}" alt="{{ why_choose_us.title }}">
+    </section>
+
+    <!-- Chefs Section -->
+    <section id="chefs">
+        <h2>Our Chef</h2>
+        {% for cheef in chef %}
+            <div class="chef">
+                <img src="{{ chef.image.url }}" alt="{{ chef.name }}">
+                <h3>{{ cheef.name }}</h3>
+                <p>{{ cheef.bio }}</p>
+            </div>
+        {% endfor %}
+    </section>
+
+</body>
+</html>
+
+{% endblock %}
