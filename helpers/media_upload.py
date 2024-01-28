@@ -12,3 +12,8 @@ def upload_chef(instance, filename):
 
 def upload_user_images(instance, filename):
     return f"user/{instance.name}/{filename}"
+
+
+def upload_item_images(instance, filename):
+    return f"item/{instance.name}/{filename}"
+

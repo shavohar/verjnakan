@@ -43,14 +43,12 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'debug_toolbar',
-    # 'phonenumber_field',
     'django_celery_beat',
     'django_celery_results',
-    'menu',
-    'users',
-    'aboutus',
-    'home',
-    'contact'
+    'menu.apps.MenuConfig',
+    'users.apps.UserConfig',
+    'home.apps.HomeConfig',
+    'reservation.apps.ReservationConfig',
 ]
 
 MIDDLEWARE = [

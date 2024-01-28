@@ -1,9 +1,9 @@
 from django.views.generic import ListView
-from django.shortcuts import render
+from .models import Item
 
 
-class Homepage(ListView):
-    template_name = "menu/home.html"
-
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+class ItemsListView(ListView):
+    template_name = "menu/menu.html"
+    context_object_name = "items"
+    paginate_by = 2
+    queryset = Item.objects.all().order_by("-pk")
