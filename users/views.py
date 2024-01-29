@@ -45,7 +45,7 @@ class RegistrationView(CreateView):
         user.is_active = False
         user.save()
         token = account_activation_token.make_token(user)
-        message = render_to_string("users/authentification.html",
+        message = render_to_string("users/authentication.html",
                                    {"users": user,
                                     "domain": get_current_site(self.request),
                                     "token": token})
